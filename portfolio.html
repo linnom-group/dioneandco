@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/style-friendly.css">
     <!-- page title -->
     <title>Pixy</title>
-    
+   
 </head>
 
 <body>
@@ -230,38 +230,44 @@
     </div>
     <!-- wrapper end -->
 
-
     <script>
-        // Fetch data from data.json
-        fetch('data.json')
-          .then(response => response.json()) // Parse the JSON from the response
+        if (window.location.search.includes('reload')) {
+          window.location.reload(true);
+        }
+      </script>
+    <script>
+        // Add a timestamp to the URL to force a fresh fetch
+        const timestamp = new Date().getTime();
+        fetch(`data.json?t=${timestamp}`)
+          .then(response => response.json())
           .then(data => {
             const workContainer = document.getElementById('work-container');
-            
+            workContainer.innerHTML = ''; // Clear previous content if needed
+      
             data.forEach(item => {
               const workCard = `
-              <div class="col-md-4">
-                <div class="mil-work-card mil-mb30">
-                                        <div class="mil-cover mil-land mil-up">
-                                            <div class="mil-hover-frame">
-                                                <img src="${item.src}" alt="${item.title}" class="mil-scale-img" data-value-1="1.15" data-value-2="1">
-                                            </div>
-                                        </div>
-                                        <div class="mil-hover-overlay">
-                                            <a href="#" class="mil-descr">
-                                                <div class="mil-text-frame">
-                                                    <h4 class="mil-head5 mil-max-1row-text mil-m4 mil-c-gone">${item.title}</h4>
-                                                </div>
-                                                <div class="mil-768-gone mil-c-gone">
-                                                    <div class="mil-stylized-btn mil-a1">
-                                                        <i class="fal fa-arrow-up"></i>
-                                                        <span>Read more</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    </div>
+                <div class="col-md-4">
+                  <div class="mil-work-card mil-mb30">
+                    <div class="mil-cover mil-land mil-up">
+                      <div class="mil-hover-frame">
+                        <img src="${item.src}" alt="${item.title}" class="mil-scale-img" data-value-1="1.15" data-value-2="1">
+                      </div>
+                    </div>
+                    <div class="mil-hover-overlay">
+                      <a href="#" class="mil-descr">
+                        <div class="mil-text-frame">
+                          <h4 class="mil-head5 mil-max-1row-text mil-m4 mil-c-gone">${item.title}</h4>
+                        </div>
+                        <div class="mil-768-gone mil-c-gone">
+                          <div class="mil-stylized-btn mil-a1">
+                            <i class="fal fa-arrow-up"></i>
+                            <span>Read more</span>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               `;
               workContainer.innerHTML += workCard;
             });
