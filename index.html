@@ -84,10 +84,10 @@
                     <div class="mil-menu-section mil-inner-scroll" style='height: unset;' id="swupMenu">
                         <ul class="mil-main-menu mil-c-gone">
                             <li><a href="/">Home</a></li>
-                            <li><a href="#about">About Us</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#">Portfolio</a></li>
-                            <li><a href="#contact">Contact Us</a></li>
+                            <li><a href="#about" class="mil-scroll-to" data-no-swup>About Us</a></li>
+                            <li><a href="#services" class="mil-scroll-to" data-no-swup>Services</a></li>
+                            <li><a href="portfolio.html" onclick="location.href='portfolio.html?data=' + new Date().getTime(); return false;">Portfolio</a></li>
+                            <li><a href="#contact" class="mil-scroll-to" data-no-swup>Contact Us</a></li>
                         </ul>
                     </div>
                     <div class="mil-bottom">
@@ -344,7 +344,7 @@
                             <h2 class="mil-head1 mil-rubber mil-tac mil-mb60 mil-up">dione & co is a <span class="mil-a1">creative</span> agency that transforms <span class="mil-a1">ideas</span> into masterpieces. We craft <span class="mil-a1">design</span> magic, breathe new life into brands, and make the impossible <span class="mil-a1">possible</span>. Choose <span class="mil-a1">dione & co</span> because we are worth it!</h2>
                             <div class="mil-text-with-button mil-mb60">
                                 <p class="mil-text-sm mil-tar mil-768-tac mil-up">We've been working for several years to build a portfolio <br>that truly reflects our diversity.</p>
-                                <span class="mil-up"><a href="#" class="mil-btn mil-a2 mil-c-gone">View portfolio</a></span>
+                                <span class="mil-up"><a href="portfolio.html" onclick="location.href='portfolio.html?data=' + new Date().getTime(); return false;" class="mil-btn mil-a2 mil-c-gone">View portfolio</a></span>
                             </div>
                         </div>
                         <div class="mil-tapes-frame">
@@ -377,12 +377,37 @@
                     <footer class="mil-footer mil-p-160-100">
                         <div class="container">
                             <div class="row mil-no-g">
+                                <div class="col-lg-6 mil-up">
+                                    <a href="#contact"  class="mil-footer-contact mil-mb90 mil-scroll-to" data-no-swup>
+                                        <h6 class="mil-footer-link mil-rubber mil-m1">Let’s TALK</h6>
+                                        <span class="mil-stylized-btn mil-c-gone">
+                                            <i class="fal fa-arrow-up"></i>
+                                            <span>Read more</span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mil-footer-menu-frame mil-mb90 mil-up">
+                                        <ul class="mil-footer-menu">
+                                            <li><a href="/" class="mil-c-gone">Home</a></li>
+                                            <li><a href="#services" class="mil-scroll-to" data-no-swup>Services</a></li>
+                                            <li><a href="#about" class="mil-scroll-to" data-no-swup>About</a></li>
+                                            <li><a href="portfolio.html" onclick="location.href='portfolio.html?data=' + new Date().getTime(); return false;">Portfolio</a></li>
+                                            <li><a href="#contact" class="mil-scroll-to" data-no-swup>Contact</a></li>
+                                        </ul>
+                                        <ul class="mil-social mil-c-gone">
+                                            <li><a href="#." target="_blank" data-no-swup><i class="fab fa-instagram"></i></a></li>
+                                            <li><a href="#." target="_blank" data-no-swup><i class="fab fa-facebook"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                                 <div class="col-lg-12">
                                     <div class="mil-footer-bottom mil-up">
                                         <p class="mil-text-sm">©2024. All rights reserved.</p>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </footer>
                     <!-- footer end -->
